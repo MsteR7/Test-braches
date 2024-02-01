@@ -12,5 +12,5 @@
 int main()
 {
     printf("HEllR\n");
-    return 20;
+    return 84;
 }
