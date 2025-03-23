@@ -7,18 +7,11 @@
 
 .PHONY: all clean re fclean
 
-SRC 	=	strlen.asm \
-			strcmp.asm	\
-			strchr.asm	\
-			strrchr.asm	\
-			memset.asm 	\
-			strncmp.asm \
-			strpbrk.asm	\
-			strcspn.asm
+SRC 	=	example.txt \
 
 OBJ 	=	 $(SRC:.asm=.o)
 
-NAME = libasm.so
+NAME = test
 
 TESTS_FLAGS	=	--coverage		\
 				-lcriterion		\
@@ -27,11 +20,9 @@ NAMETEST	=	unit_tests
 
 all: $(NAME)
 
-%.o: %.asm
-	nasm -f elf64 -DPIC $< -o $@
 
 $(NAME): $(OBJ)
-		ld -shared $(OBJ) -o $(NAME)
+		gcc $(OBJ) -o $(NAME)
 
 
 tests_run:
