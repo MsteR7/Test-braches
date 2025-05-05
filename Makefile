@@ -15,10 +15,14 @@ NAME = test
 
 TESTS_FLAGS	=	--coverage		\
 				-lcriterion		\
-
+NAMETEST = 	test
 
 all: $(NAME)
 
+tests_run:
+		gcc -o $(NAMETEST) $(TESTS_FLAGS) tests/*.c
+		./$(NAMETEST)
+		-gcovr --exclude tests/ --txt-metric branch
 
 $(NAME): $(OBJ)
 		gcc $(OBJ) -o $(NAME)
