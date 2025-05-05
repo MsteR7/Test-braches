@@ -7,7 +7,7 @@
 
 .PHONY: all clean re fclean
 
-SRC 	=	hello.c \
+SRC 	=	hello.c
 
 OBJ 	=	 $(SRC:.asm=.o)
 
