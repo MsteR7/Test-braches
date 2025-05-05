@@ -9,14 +9,13 @@
 
 SRC 	=	hello.c
 
-OBJ 	=	 $(SRC:.asm=.o)
+OBJ 	=	 $(SRC:.c=.o)
 
 NAME = test
 
 TESTS_FLAGS	=	--coverage		\
 				-lcriterion		\
 
-NAMETEST	=	unit_tests
 
 all: $(NAME)
 
@@ -25,10 +24,6 @@ $(NAME): $(OBJ)
 		gcc $(OBJ) -o $(NAME)
 
 
-tests_run:
-		gcc -o $(NAMETEST) $(TESTS_FLAGS) tests/*.c
-		./$(NAMETEST)
-		-gcovr --exclude tests/ --txt-metric branch
 
 clean:
 		rm -rf $(OBJ)
