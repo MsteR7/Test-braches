@@ -15,7 +15,7 @@ NAME = test
 
 TESTS_FLAGS	=	--coverage		\
 				-lcriterion		\
-NAMETEST = 	test
+NAMETEST = 	unit_tests
 
 all: $(NAME)
 
