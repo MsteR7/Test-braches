@@ -7,7 +7,7 @@
 
 .PHONY: all clean re fclean
 
-SRC 	=	example.txt \
+SRC 	=	hello.c \
 
 OBJ 	=	 $(SRC:.asm=.o)
 
