@@ -5,13 +5,12 @@
 ** main
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
 #include <stddef.h>
 #include <string.h>
 #include <dlfcn.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <criterion/criterion.h>
 
 Test(strchr, _string)
 {
